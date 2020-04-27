@@ -4,13 +4,14 @@ import {TasksPageComponent} from "./tasks-page/tasks-page.component";
 import {AddUsersPageComponent} from "./admin/add-users-page/add-users-page.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {LoginPageComponent} from "./login-page/login-page.component";
+import {AppGuardGuard} from "./app-guard.guard";
 
 @NgModule({
   imports: [RouterModule.forRoot([
-    {path: '', component: HomePageComponent},
-    {path: 'tasks', component: TasksPageComponent},
-    {path: 'admin', component: AddUsersPageComponent},
-    {path: 'login', component: LoginPageComponent}
+    {path: '', component: LoginPageComponent},
+    {path: 'home', component: HomePageComponent, canActivate: [AppGuardGuard]},
+    {path: 'tasks', component: TasksPageComponent,canActivate: [AppGuardGuard]},
+    {path: 'admin', component: AddUsersPageComponent, canActivate: [AppGuardGuard]}
   ])],
   exports: [RouterModule]
 })

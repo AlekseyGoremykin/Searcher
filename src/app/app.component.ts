@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AppGuardGuard} from "./app-guard.guard";
 
 
 @Component({
@@ -8,4 +9,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   col = '#3f51b5';
+
+  constructor(public out: AppGuardGuard) {
+  }
 }

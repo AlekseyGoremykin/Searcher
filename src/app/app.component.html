@@ -1,5 +1,5 @@
 <nav class="mainMenu">
-  <button class="btn" mat-button routerLink="/">Главная</button>
+  <button class="btn" mat-button routerLink="/home">Главная</button>
   <button class="btn" mat-button routerLink="/tasks">Задачи</button>
   <button class="btn" mat-button [matMenuTriggerFor]="menu">Тема</button>
   <mat-menu #menu="matMenu">
@@ -8,10 +8,15 @@
     <button mat-menu-item>Color 3</button>
     <button mat-menu-item>Color 4</button>
   </mat-menu>
-  <button class="btn logoutButton :root" routerLink="/login" mat-button>Выйти</button>
+  <button class="btn logoutButton :root" routerLink="/" (click)="out.logout()" mat-button>Выйти</button>
 </nav>
 
-<div class="container">
+<div class="mainContainer">
   <router-outlet></router-outlet>
+</div>
+
+
+<div class="bottom">
+
 </div>
 

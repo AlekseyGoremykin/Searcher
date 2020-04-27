@@ -4,4 +4,7 @@ export interface Task {
   comment?: string;
 }
 
-
+export interface User {
+  login: string;
+  password: string;
+}

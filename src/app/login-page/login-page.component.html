@@ -1,14 +1,17 @@
 <div class="container">
-  <form class="example-form loginPanel">
+  <form class="example-form loginPanel" [formGroup]="loginPanel">
+    <div>
+      <h1>Панель авторизации</h1>
+    </div>
     <mat-form-field class="example-full-width">
       <mat-label>Введите логин</mat-label>
-      <input type="text" matInput placeholder="Логин" value="">
+      <input formControlName="login" type="text" matInput placeholder="Логин" value="">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Введите пароль</mat-label>
-      <input type="password" matInput placeholder="Пароль" value="">
+      <input formControlName="password" type="password" matInput placeholder="Пароль" value="">
     </mat-form-field>
-    <button mat-flat-button color="primary">Войти</button>
+    <button mat-flat-button color="primary" (click)="login()">Войти</button>
   </form>
 </div>
